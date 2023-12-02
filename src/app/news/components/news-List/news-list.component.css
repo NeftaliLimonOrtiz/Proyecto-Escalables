@@ -1,0 +1,13 @@
+/* Custom styling for news images */
+.news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Optional: Add some spacing between the cards */
+  .card {
+    margin-bottom: 20px;
+  }
+  

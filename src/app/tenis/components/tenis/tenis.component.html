@@ -1,0 +1,25 @@
+<!-- tenis.component.html -->
+<li>
+  <div class="character-card" [ngClass]="{ 'liked': hasUserLiked }">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{tenis.image}}" class="card-img" alt="{{tenis.name}}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{tenis.name}}</h5>
+          <p class="card-text">Precio: {{tenis.price}}</p>
+        </div>
+        <div class="text-center">
+          <span (click)="onDeleteclick()" class="delete-button" *ngIf="isAdmin">
+            <i class="fas fa-times"></i> Eliminar
+          </span>
+          <span (click)="onMarkLikeClick()" class="read-button" *ngIf="authService.isAuthenticated()  && !hasUserLiked && !isAdmin">
+            <i class="fas fa-check"></i> Me gusta
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+

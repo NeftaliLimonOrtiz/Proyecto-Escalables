@@ -1,0 +1,42 @@
+.character-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+    padding: 10px; 
+    border: 1px solid #ccc;
+    background-color: white;
+  }
+  
+  .character-name {
+    margin-top: 10px; 
+  }
+  
+  .delete-button, .read-button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .delete-button:hover {
+    color: #bd2130; 
+  }
+
+  .liked{
+    background-color: #FFD700;
+  }
+  
+  .read-button:hover {
+    color: #fff;
+    background-color: #3564dc;
+  }
+  
+.read-button {
+  color: #007bff;
+  background-color: #fff;
+}
+  

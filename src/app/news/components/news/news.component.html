@@ -1,0 +1,23 @@
+<li>
+  <div class="character-card" [ngClass]="{'read-news': hasReadNew}">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img [src]="news.image" class="card-img" alt="{{news.name}}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title character-name">{{news.name}}</h5>
+          <p class="card-text">{{news.description}}</p>
+        </div>
+        <div class="text-center">
+          <span (click)="onDeleteclick()" class="delete-button" *ngIf="isAdmin">
+            <i class="fas fa-times"></i> Eliminar
+          </span>
+          <span (click)="onMarkAsReadClick()" class="read-button" *ngIf="authService.isAuthenticated() && !hasReadNew && !isAdmin">
+            <i class="fas fa-check"></i> Marcar como leída
+          </span> 
+        </div>
+      </div>
+    </div>
+  </div>
+</li>

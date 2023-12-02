@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <h2>Actualizar Noticia</h2>
+    <form (ngSubmit)="updateNews()">
+      <div class="form-group">
+        <label class="form-label" for="selectedNews">Selecciona una Noticia</label>
+        <select id="selectedNews" class="form-control" name="selectedNews" [(ngModel)]="selectedNewsId" (change)="loadNewsDetails()">
+          <option [ngValue]="null">Selecciona una Noticia</option>
+          <option *ngFor="let news of news" [value]="news.id">{{ news.name }}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="name" id="name" [(ngModel)]="newNewsUpdate.name">
+      </div>
+  
+      <div class="form-group">
+        <label for="description" class="form-label">Descripción</label>
+        <textarea class="form-control" name="description" id="description" [(ngModel)]="newNewsUpdate.description"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="image" class="form-label">Imagen URL</label>
+        <input type="text" class="form-control" name="image" id="image" [(ngModel)]="newNewsUpdate.image">
+      </div>
+  
+      <input type="hidden" name="id" id="id" [(ngModel)]="newNews.id">
+  
+      <button type="submit" class="btn btn-success mt-3">Actualizar</button>
+    </form>
+    <hr>
+  </div>
+  
